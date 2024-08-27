@@ -13,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
     lateinit var button: Button
     lateinit var textView: TextView
+    lateinit var Num1: TextView
+    lateinit var Num2: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +23,16 @@ class MainActivity : AppCompatActivity() {
 
         button = findViewById(R.id.buttonMain)
         textView = findViewById(R.id.TextViewMain)
-        textView.text = "Esto es un texto"
+        textView.text = "Calculadora2"
+        Num1 = findViewById(R.id.Num1)
+        Num2 = findViewById(R.id.Num2)
 
         button.setOnClickListener {
-            Toast.makeText(this, "Se preciono el boton", Toast.LENGTH_SHORT)
+
+            var n1 = Num1.text.toString().toInt()
+            var n2 = Num1.text.toString().toInt()
+            var n = n1 + n2
+            textView.text = n.toString()
         }
 
     }
